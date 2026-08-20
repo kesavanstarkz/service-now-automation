@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "ServiceNow AI Assistant",
+  "version": "1.0.0",
+  "description": "Context-aware AI Assistant for ServiceNow PDI",
+  "permissions": [
+    "sidePanel",
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://dev*.service-now.com/*",
+    "http://localhost:8000/*"
+  ],
+  "action": {
+    "default_title": "Open ServiceNow AI Assistant"
+  },
+  "side_panel": {
+    "default_path": "src/sidepanel/index.html"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://dev*.service-now.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

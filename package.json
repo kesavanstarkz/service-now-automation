@@ -1,0 +1,11 @@
+{
+  "name": "servicenow-ai-assistant-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "postinstall": "npm --prefix extension install",
+    "build": "npm --prefix extension run build",
+    "dev:extension": "npm --prefix extension run dev",
+    "build:extension": "npm --prefix extension run build"
+  }
+}
